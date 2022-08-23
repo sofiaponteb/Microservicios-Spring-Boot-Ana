@@ -9,7 +9,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  color: white;
+  color: black;
   padding: 0 20px 100px;
 }
 
@@ -38,6 +38,7 @@ body {
 }
 .div1 {
   background: #4f58d1; 
+  color: white ;
 }
 .div2 {
   background: #4f58d1; 
@@ -72,17 +73,6 @@ padding-left: 30px;
   font-size: 14px;
 }
 
-.inputlist {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid white;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
 .label,
 section > label {
   line-height: 2;
@@ -93,6 +83,18 @@ section > label {
   color: white;
   font-size: 14px;
   font-weight: 200;
+}
+
+.lista {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 200;
+  background-color: white;
 }
 
 .h4 {
