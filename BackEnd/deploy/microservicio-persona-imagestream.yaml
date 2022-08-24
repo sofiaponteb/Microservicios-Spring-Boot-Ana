@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: microservicio-persona
+  name: microservicio-persona
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: sofiaponte/microservicio-persona:v1
+      generation: null
+      importPolicy: {}
+      name: v1
+      referencePolicy:
+        type: ""
+status:
+  dockerImageRepository: ""

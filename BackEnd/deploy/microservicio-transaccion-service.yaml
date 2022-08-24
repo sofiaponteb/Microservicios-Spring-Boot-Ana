@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: microservicio-transaccion
+  name: microservicio-transaccion
+spec:
+  ports:
+    - name: "8020"
+      port: 8020
+      targetPort: 8020
+  selector:
+    io.kompose.service: microservicio-transaccion
+status:
+  loadBalancer: {}

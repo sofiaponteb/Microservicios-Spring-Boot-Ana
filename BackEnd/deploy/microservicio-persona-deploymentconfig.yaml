@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: microservicio-persona
+  name: microservicio-persona
+spec:
+  replicas: 1
+  selector:
+    io.kompose.service: microservicio-persona
+  strategy:
+    resources: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: microservicio-persona
+    spec:
+      containers:
+        - env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: http://eureka-server:8761/eureka
+            - name: spring.datasource.password
+              value: Passw0rd2020
+            - name: spring.datasource.url
+              value: jdbc:postgresql://172.21.252.223/postgresql
+            - name: spring.datasource.username
+              value: postgresadmin
+          image: ' '
+          name: microservicio-persona
+          ports:
+            - containerPort: 8060
+          resources: {}
+      restartPolicy: Always
+  test: false
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - microservicio-persona
+        from:
+          kind: ImageStreamTag
+          name: microservicio-persona:v1
+      type: ImageChange
+status:
+  availableReplicas: 0
+  latestVersion: 0
+  observedGeneration: 0
+  replicas: 0
+  unavailableReplicas: 0
+  updatedReplicas: 0
