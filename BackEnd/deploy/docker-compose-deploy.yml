@@ -2,12 +2,12 @@ version: '2'
 
 services:
   eureka-server:
-    image: <usuario docker>/backend_eureka-server:<version>
+    image: sofiaponte/backend_eureka-server:v1
     ports:
       - "8761:8761"
 
   zuul-server:
-    image: <usuario docker>/zuul-server:<version>
+    image: sofiaponte/zuul-server:v1
     ports:
       - "8090:8090"
     depends_on:
@@ -16,7 +16,7 @@ services:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
 
   microservicio-empresa:
-    image: <usuario docker>/microservicio-empresa:<version> 
+    image: sofiaponte/microservicio-empresa:v1
     ports:
       - "8890:8890"
     depends_on:
@@ -24,12 +24,12 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://<ip postgres>:5432/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.252.223:5432/postgresql
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020 
 
   microservicio-persona:
-    image: <usuario docker>/microservicio-persona:<version>
+    image: sofiaponte/microservicio-persona:v1
     ports:
       - "8060:8060"
     depends_on:
@@ -37,12 +37,12 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://<ip postgres>/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.252.223/postgresql
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020
 
   microservicio-transaccion:
-    image: <usuario docker>/microservicio-transaccion:<version>
+    image: sofiaponte/microservicio-transaccion:v1
     ports:
       - "8020:8020"
     depends_on:
@@ -50,6 +50,6 @@ services:
       - zuul-server
     environment:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
-      spring.datasource.url: jdbc:postgresql://<ip postgres>:5432/sampledb
+      spring.datasource.url: jdbc:postgresql://172.21.252.223:5432/postgresql
       spring.datasource.username: postgresadmin
       spring.datasource.password: Passw0rd2020
