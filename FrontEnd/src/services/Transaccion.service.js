@@ -1,5 +1,5 @@
 import axios from "axios";
-const rutabase ="http://zuul-server-spring2.openshift-demo-dal-bb2658cfd9b67ad75139ae3de1b2980c-0000.us-south.containers.appdomain.cloud/api/transacciones"
+const rutabase ="http://zuul-server-springboot-ana.openshift-demo-dal-bb2658cfd9b67ad75139ae3de1b2980c-0000.us-south.containers.appdomain.cloud/"
 export var mensaje="Asegurese de llenar todos los campos";
  
 
