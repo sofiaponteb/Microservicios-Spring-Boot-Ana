@@ -7,7 +7,7 @@ services:
       - "8761:8761"
 
   zuul-server:
-    image: sofiaponte/zuul-server:v1
+    image: sofiaponte/backend_zuul-server:v1
     ports:
       - "8090:8090"
     depends_on:
@@ -16,7 +16,7 @@ services:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8761/eureka
 
   microservicio-empresa:
-    image: sofiaponte/microservicio-empresa:v1
+    image: sofiaponte/backend_microservicio-empresa:v1
     ports:
       - "8890:8890"
     depends_on:
@@ -29,7 +29,7 @@ services:
       spring.datasource.password: Passw0rd2020 
 
   microservicio-persona:
-    image: sofiaponte/microservicio-persona:v1
+    image: sofiaponte/backend_microservicio-persona:v1
     ports:
       - "8060:8060"
     depends_on:
@@ -42,7 +42,7 @@ services:
       spring.datasource.password: Passw0rd2020
 
   microservicio-transaccion:
-    image: sofiaponte/microservicio-transaccion:v1
+    image: sofiaponte/backend_microservicio-transaccion:v1
     ports:
       - "8020:8020"
     depends_on:

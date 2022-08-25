@@ -1,4 +1,4 @@
-apiVersion: image.openshift.io/v1
+apiVersion: v1
 kind: ImageStream
 metadata:
   creationTimestamp: null
@@ -12,7 +12,7 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sofiaponte/microservicio-empresa:v1
+        name: sofiaponte/backend_microservicio-empresa:v1
       generation: null
       importPolicy: {}
       name: v1

@@ -12,7 +12,7 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sofiaponte/microservicio-persona:v1
+        name: sofiaponte/backend_microservicio-persona:v1
       generation: null
       importPolicy: {}
       name: v1

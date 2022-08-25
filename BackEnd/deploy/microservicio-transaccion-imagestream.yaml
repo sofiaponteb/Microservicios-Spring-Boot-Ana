@@ -12,7 +12,7 @@ spec:
     - annotations: null
       from:
         kind: DockerImage
-        name: sofiaponte/microservicio-transaccion:v1
+        name: sofiaponte/backend_microservicio-transaccion:v1
       generation: null
       importPolicy: {}
       name: v1
